@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="l-b-t">
+    <img src="../img/tudou.jpg" alt="">
+    <img src="../img/dan.jpg" alt="">
+    <img src="../img/gonggua.jpg" alt="">
+</div>
+</body>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        var oImg=$('#l-b-t').find('img');
+        var count=0;
+        function timer(){
+            if(count==2){
+                count=-1;
+            }
+            oImg.hide();
+            oImg.eq(count).show();
+            count++;
+        }
+        setInterval(timer,1000);
+    })
+</script>
+</html>

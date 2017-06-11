@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东到家</title>
+    <link rel="stylesheet" href="../Swiper-3.3.1/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            /*height:2000px;*/
+            background: #F4F4F4;
+        }
+
+       .swiper-slide {
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .img-container{
+            width:100%;
+        }
+        img{
+            width:100%;
+        }
+        .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+            height: 17px;
+            width: 16px;
+            color: #f5f5f5;
+        }
+        a{
+            text-decoration: none;
+        }
+        #footer{
+            display: flex;
+            width:100%;
+            height:50px;
+            border-top:1px solid #D9D9D9;
+            position: fixed;
+            bottom:0;
+            z-index: 1;
+            background: #ffffff;
+        }
+        #footer a{
+            display: inline-block ;
+            width:20%;
+            height:50px;
+            text-align: center ;
+            background-size: 24px 500px;
+            color:#555;
+            font-size:15px;
+        }
+        #footer p{
+            padding-top:28px;
+        }
+        #a1{
+            color: #47B34F;
+            background: url(img/xbt.png) no-repeat ;
+            background-position: center 0;
+        }
+        #a2{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -300px;
+        }
+        #a3{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -350px;
+        }
+        #a4{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -400px;
+        }
+        #a5{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -450px;
+        }
+        #order table{
+            width:100%;
+            margin-top:20px;
+            background: #ffffff;
+        }
+        #order td {
+            display: inline-block ;
+            width:20%;
+            text-align: center;
+        }
+        #order img{
+            width:50px;
+            height:50px;
+        }
+        #order a{
+            font-size: 10px;
+            color:#666666;
+        }
+        #y-hui{
+            margin-top:10px;
+            display: flex ;
+        }
+        #y-hui li{
+            display: inline-block ;
+            width:33.3%;
+            height:130px;
+            background: #ffffff;
+            margin-left:2px;
+        }
+         .tu-zi{
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            color:red;
+        }
+        #m-sha #time{
+            width:100px;
+            height:30px;
+            margin:0 auto;
+        }
+        .tu-zi i{
+            display: inline-block ;
+            height:20px;
+            width:20px;
+            background: url(img/y-hui.png) no-repeat;
+            background-position: 0 -267px;
+            background-size:20px 390px;
+        }
+        #time a{
+            display: inline-block;
+            width:25px;
+            height:25px;
+            text-align: center;
+            line-height: 25px;
+            border-radius:3px;
+            background: #666666;
+            color:#ffffff;
+        }
+        #xiaolunbo{
+            width:100%;
+            /*height:70px;*/
+            /*text-align: center;*/
+            padding-left:25%;
+        }
+        #xiaolunbo img{
+            width:60px;
+            height:60px;
+            position: absolute;
+        }
+        .tu img{
+            width:60px;
+            height:60px;
+        }
+        .tu-zi2 i{
+            display: inline-block ;
+            height:20px;
+            width:20px;
+            background: url(img/y-hui.png) no-repeat;
+            background-position: 0 -207px;
+            background-size:20px 390px;
+        }
+        .zi{
+            font-size: 10px;
+            text-align: center;
+            color:#D9CDA4;
+        }
+        #y-hui img{
+            width:60px;
+            height:60px;
+        }
+        .yi{
+            text-align: center;
+            margin-top:10px;
+        }
+        .tu-zi3 i{
+            display: inline-block ;
+            height:20px;
+            width:20px;
+            background: url(img/y-hui.png) no-repeat;
+            background-position: 0 -238px;
+            background-size:20px 390px;
+        }
+        hr{
+            margin-top:25px;
+            border-color:#EAEAEA;
+            opacity: .3;
+            width:80%;
+            position: relative ;
+            left:10%;
+        }
+        .mao_zi{
+            width:100px;
+            height:30px;
+            font-size: 15px;
+            line-height: 30px;
+            text-align: right;
+            background:url(img/mao_zi.png) no-repeat #F4F4F4;
+            background-size:25px 60px;
+            position: relative;
+            top: -17px;
+            left: 40%;
+        }
+        #fu1{
+            display: inline-block ;
+            height:205px;
+            width:96%;
+            border:1px solid #cccccc;
+            border-radius: 5px;
+            margin:0 1.5%;
+            background: #ffffff;
+        }
+        .fu-1-1{
+            width:70px;
+            height:60px;
+            background: url(img/san.jpg) no-repeat;
+            background-size: 60px 60px;
+            margin:15px 5px ;
+            border:1px solid #cccccc;
+        }
+        #fu1-2-p{
+            font-size: 10px;
+            height:20px;
+            line-height: 20px;
+            width:90%;
+            padding-left: 30px;
+            margin:0 auto;
+            background:url(img/mao_zi.png) no-repeat #F4F4F4;
+            background-position: 0 -50px;
+            background-size: 35px;
+        }
+        #fu1-3 table{
+            margin-top:5px;
+            width:100%;
+            text-align: center;
+        }
+        #fu1-3 td{
+            width:25%;
+            color:red;
+        }
+        #fu1-3 img{
+            width:55px;
+            height:55px;
+        }
+        .duo-long{
+            display: inline-block ;
+            height:120px;
+            width:96%;
+            background: #ffffff;
+            border:1px solid #cccccc;
+            margin:10px 1.5% 0 1.5%;
+            border-radius: 5px;
+        }
+        .duo-1{
+            display: flex;
+            width:100%;
+            height:80px;
+        }
+        .duo-1-1{
+            width:70px;
+            height:60px;
+            background: url(img/duo.jpg) no-repeat;
+            background-size: 60px 60px;
+            margin:15px 5px ;
+            border:1px solid #cccccc;
+        }
+        .duo-1-2{
+            width:93%;
+            height:80px;
+        }
+        .duo-3-p ul{
+            list-style: none;
+            display: flex ;
+        }
+        .duo-3-p ul li{
+            display: inline-block;
+            width:15px;
+            height:15px;
+        }
+        .duo-li{
+            background: url(img/xing_tou.png)no-repeat;
+            background-position: 0 0;
+            background-size:19px 187px ;
+        }
+        .duo-li2{
+            background: url(img/xing_tou.png)no-repeat;
+            background-position: 0 -20px;
+            background-size:19px 187px ;
+        }
+
+        .duo-3-span{
+            font-size: 10px;
+            color:#666666;
+        }
+        .duo-long b{
+            color:#666666;
+        }
+        .duo-1{
+            display: flex ;
+        }
+        .duo-1-2{
+            padding-top:15px;
+            box-sizing: border-box;
+        }
+        .duo-3-p {
+            padding-top:3px;
+            display: flex ;
+        }
+        .g-w-che{
+            display: inline-block ;
+            width:40px;
+            height:24px;
+            border-left:1px solid #cccccc;
+            position: absolute;
+            right:2%;
+        }
+        .duo-3-span{
+            margin-left:5px;
+            padding-left:5px;
+            border-left:1px solid #cccccc;
+        }
+        .iconfont{
+            font-size: 20px;
+            padding-left:10px;
+        }
+        .duo-2-span1{
+            display: inline-block ;
+            width:50px;
+            height:18px;
+            line-height: 18px;
+            background:#28ACFF ;
+            color:#ffffff;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+        .duo-2-span2{
+            display: inline-block ;
+            height:18px;
+            line-height: 18px;
+            font-size: 10px;
+            color:#666666;
+        }
+        .duo-2{
+            height:40px;
+        }
+        .duo-2-p1{
+            display: inline-block ;
+            width:30px;
+            height:18px;
+            background: #28ACFF;
+            color:#ffffff;
+            font-size: 10px;
+            margin: 10px 0 0 5px;
+            text-align: center;
+            line-height: 18px;
+        }
+        .duo-2-p2{
+            display: inline-block ;
+            height:18px;
+            color:#666666;
+            font-size: 10px;
+        }
+        .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+            height: 6px;
+            width: 6px;
+            color: #f5f5f5;
+        }
+        .swiper-pagination {
+        text-align: right;
+        }
+        #ding{
+            width:36px;
+            height:36px;
+            background:url(img/my_xbt.png) no-repeat #000000;
+            background-position: -268px -355px;
+            background-size: 320px auto;
+            opacity: .8;
+            border: 1px solid #757575;
+            border-top: 1px solid #4b4b4b;
+            border-radius: 0 0 0 4px;
+            position: fixed ;
+            bottom: 140px;
+            right:0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-container swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/chao.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/nong.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/sheng.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="img/yi.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div id="footer">
+        <a href="jd_dj.html" target="_blank" id="a1"><p>首页</p></a>
+        <a href="fen_lei.html" target="_self" id="a2"><p>分类</p></a>
+        <a href="gou_wu_che.html" target="_self" id="a3"><p>购物车</p></a>
+        <a href="ding_dan.html" target="_self" id="a4"><p>订单</p></a>
+        <a href="my.html" target="_self" id="a5"><p>我的</p></a>
+    </div>
+    <div id="order">
+        <table>
+            <tr>
+                <td><a href="#"><img src="img/1.png" alt=""></a></td>
+                <td><a href="#"><img src="img/2.png" alt=""></a></td>
+                <td><a href="#"><img src="img/3.png" alt=""></a></td>
+                <td><a href="#"><img src="img/4.png" alt=""></a></td>
+                <td><a href="#"><img src="img/5.png" alt=""></a></td>
+            </tr>
+            <tr>
+                <td><a href="#">超市生鲜</a></td>
+                <td><a href="#">外卖美食</a></td>
+                <td><a href="#">鲜花烘焙</a></td>
+                <td><a href="#">上门服务</a></td>
+                <td><a href="#">医药健康</a></td>
+            </tr>
+        </table>
+    </div>
+    <ul id="y-hui">
+        <li id="m-sha">
+            <a href="#">
+                <p class="tu-zi"><i></i> 限时秒杀</p>
+            </a>
+            <p id="time">
+                    <a href="#" id="shi">5</a>
+                    <a href="#" id="fen">0</a>
+                    <a href="#" id="miao">0</a>
+            </p>
+            <div id="xiaolunbo">
+                <img id="div1" src="img/tudou.jpg" alt="">
+                <img  id="div2" src="img/gonggua.jpg" alt="">
+                <img id="div3" src="img/dan.jpg" alt="">
+            </div>
+        </li>
+        <li id="yi-qu">
+            <a href="#">
+                <p class="tu-zi2 tu-zi"><i></i>一元专区</p>
+                <p class="zi">欢乐一元购</p>
+                <p class="yi"><img src="img/yi_yuan.gif" alt=""></p>
+            </a>
+        </li>
+        <li id="m-qu">
+            <a href="#">
+                <p class="tu-zi3 tu-zi"><i></i>免运专区</p>
+                <p class="zi">29元起免运~</p>
+                <p class="yi"><img src="img/m-qu.jpg" alt=""></p>
+            </a>
+        </li>
+    </ul>
+    <hr>
+    <div class="mao_zi">附近的店铺</div>
+    <a href="#" id="fu1">
+        <div class="duo-1">
+            <div class="fu-1-1"></div>
+            <div class="duo-1-2">
+                <div>
+                    <b class="duo-1-p">三益果园-马驹桥店</b>
+                    <p class="g-w-che"><span class="iconfont">&#xe60a;</span></p>
+                </div>
+                <p class="duo-2-p">
+                    <span class="duo-2-span1">达达专送</span>
+                    <span class="duo-2-span2">56分钟</span>
+                </p>
+                <div class="duo-3-p">
+                    <ul>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li2"></li>
+                    </ul>
+                    <span class="duo-3-span">月售42单</span>
+                </div>
+            </div>
+        </div>
+        <div id="fu1-2">
+            <p id="fu1-2-p">秒杀活动天天有，实惠不断三益果园</p>
+        </div>
+        <div id="fu1-3">
+            <table>
+                <tr>
+                    <td><img src="img/mi_hou.jpg" alt=""></td>
+                    <td><img src="img/li.jpg" alt=""></td>
+                    <td><img src="img/shi_zi.jpg" alt=""></td>
+                    <td><img src="img/pu_tao.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td>￥3.00</td>
+                    <td>￥1.00</td>
+                    <td>￥5.00</td>
+                    <td>￥5.99</td>
+                </tr>
+            </table>
+        </div>
+    </a>
+    <a href="#" class="duo-long">
+        <div class="duo-1">
+            <div class="duo-1-1"></div>
+            <div class="duo-1-2">
+                <div>
+                    <b class="duo-1-p">多隆超市-马驹桥店</b>
+                    <p class="g-w-che"><span class="iconfont">&#xe60a;</span></p>
+                </div>
+                <p class="duo-2-p">
+                    <span class="duo-2-span1">达达专送</span>
+                    <span class="duo-2-span2">09:330开始配送</span>
+                </p>
+                <div class="duo-3-p">
+                    <ul>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li2"></li>
+                    </ul>
+                    <span class="duo-3-span">月售1470单</span>
+                </div>
+            </div>
+        </div>
+        <div class="duo-2">
+            <p class="duo-2-p1">领券</p>
+            <p class="duo-2-p2">满29减6</p>
+        </div>
+    </a>
+    <a href="#" class="duo-long">
+        <div class="duo-1">
+            <div class="duo-1-1"></div>
+            <div class="duo-1-2">
+                <div>
+                    <b class="duo-1-p">多隆超市-马驹桥店</b>
+                    <p class="g-w-che"><span class="iconfont">&#xe60a;</span></p>
+                </div>
+                <p class="duo-2-p">
+                    <span class="duo-2-span1">达达专送</span>
+                    <span class="duo-2-span2">09:330开始配送</span>
+                </p>
+                <div class="duo-3-p">
+                    <ul>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li"></li>
+                        <li class="duo-li2"></li>
+                    </ul>
+                    <span class="duo-3-span">月售1470单</span>
+                </div>
+            </div>
+        </div>
+        <div class="duo-2">
+            <p class="duo-2-p1">领券</p>
+            <p class="duo-2-p2">满29减6</p>
+        </div>
+    </a>
+    <div id="ding"></div>
+</body>
+<script src="../Swiper-3.3.1/dist/js/swiper.js"></script>
+<script src="../js/jquery-3.1.1.js"></script>
+<script>
+    //开头 轮播图
+    new Swiper('.img-container',{
+        loop:true,
+        pagination: '.swiper-pagination',        //pagination:分页
+        autoplay:2000,
+        paginationClickable: false          //Clickable:可以点击的
+//        paginationBulletRender: function (index, cname) {
+//            return '<span class="' + cname + '">' +(index+1)+ '</span>'
+//        }
+    });
+    //y-hui 倒计时
+    var timer;
+    window.onload=function(){
+        var shi=document.getElementById ("shi");
+        var fen=document.getElementById ("fen");
+        var miao=document.getElementById ("miao");
+        function changeTime(){
+            a = parseInt(shi.innerHTML);
+            b = parseInt(fen.innerHTML);
+            c = parseInt(miao.innerHTML);
+            if (a == 0 && b == 0 && c == 0) {
+                return false;
+            }
+            c = c - 1;
+            if (c < 0&&b>0) {
+                c = 59;
+                b=b-1;
+            } else if(c<0&&b==0){
+                c=59;
+                b=59;
+                a=a-1;
+            }
+            else if (b == 0 && c == 0&& a>0) {
+                c = 59;
+                b = 59;
+                a = a - 1;
+            } else if (a == 0 && b == 0 && c == 0) {
+                miao.innerHTML =0;
+                clearInterval(timer);
+                return false;
+            }
+            shi.innerHTML = a;
+            fen.innerHTML = b;
+            miao.innerHTML = c;
+        }
+        timer=setInterval(changeTime,1000);
+    };
+    //限时秒杀中的轮播图
+    $(function () {
+        var oImg = $('#xiaolunbo').find('img');
+        var count = 0;
+
+        function tab() {
+            if (count == 3) {
+                count = 0;
+            }
+            oImg.hide();
+            oImg.eq(count).show();
+            count++;
+        }
+
+        setInterval(tab, 2000);
+    });
+    //返回顶部按钮
+    var ding=document.getElementById ("ding");
+    var timer2;
+    window.onscroll=function(){
+        var top=document.documentElement.scrollTop||document.body.scrollTop;
+        if(top>=300){
+            ding.style.display ='block';
+        }else{
+            ding.style.display ='none';
+        }
+    };
+    function callBack(){
+        var top=document.documentElement.scrollTop||document.body.scrollTop;
+        if(top>0){
+            document.documentElement.scrollTop-=50;
+            document.body.scrollTop-=50;
+        }else{
+            document.documentElement.scrollTop=0;
+            document.body.scrollTop=0;
+            clearInterval(timer2);
+        }
+    }
+    ding.onclick=function(){
+        timer2=setInterval(callBack,10);
+    };
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <style>
+        #miao_sha{
+            display: flex;
+            width:150px;
+            height:40px;
+            background: pink;
+        }
+        span{
+            display: inline-block ;
+            width:36px;
+            height:36px;
+            background: #000000;
+            margin-left:5px;
+            color:#ffffff;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="miao_sha">
+        <span id="shi">2</span>
+        <span id="fen">2</span>
+        <span id="miao">2</span>
+    </a>
+</body>
+<script>
+    window.onload=function(){
+        var shi=document.getElementById ("shi");
+        var fen=document.getElementById ("fen");
+        var miao=document.getElementById ("miao");
+        function changeTime(){
+            var a=parseInt(shi.innerHTML);
+            var b=parseInt(fen.innerHTML);
+            var c=parseInt(miao.innerHTML);
+            if (a == 0 && b == 0 && c == 0) {
+                return false;
+            }
+            c = c - 1;
+            if (c < 0&&b>0) {
+                c = 59;
+                b=b-1;
+            } else if(c<0&&b==0){
+                c=59;
+                b=59;
+                a=a-1;
+            }
+            else if (b == 0 && c == 0&& a>0) {
+                c = 59;
+                b = 59;
+                a = a - 1;
+            } else if (a == 0 && b == 0 && c == 0) {
+                miao.innerHTML =0;
+                clearInterval(timer);
+                return false;
+            }
+            shi.innerHTML = a;
+            fen.innerHTML = b;
+            miao.innerHTML = c;
+        }
+        var timer=setInterval(changeTime,1000);
+    }
+</script>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录/注册</title>
+    <style>
+        body{
+            background: #F4F4F4;
+            height:800px;
+        }
+        *{
+            padding:0;
+            margin:0;
+        }
+        .top{
+            display: flex ;
+            width:100%;
+            height:116px;
+            background:url(img/my_bg.jpg) no-repeat;
+            background-size: 100%;
+        }
+        .log{
+            width:70px;
+            height:70px;
+            background:url(img/log.png) no-repeat;
+            background-size: 70px;
+            margin:25px 20px;
+        }
+        .d-z{
+            width:97px;
+            height:30px;
+            background: #ffffff;
+            margin:44px 0;
+            border-radius: 5px;
+            color:#47B34F;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 14px;
+            color:#3c3c3c;
+        }
+        .q-y-b{
+            display: flex ;
+            width:100%;
+            height:70px;
+            background: #ffffff;
+        }
+        .q-b{
+            display: inline-block ;
+            width:33.3%;
+            text-align: center;
+            line-height: 100px;
+            background: url(img/q_bao.png)no-repeat;
+            background-position: center 10px;
+            background-size: 25px;
+        }
+        .y-h{
+            display: inline-block ;
+            text-align: center;
+            width:33.3%;
+            height:70px;
+            line-height: 35px;
+        }
+        .s{
+            width:100%;
+            height:35px;
+        }
+        .x{
+            width:100%;
+            height:35px;
+            font-size: 14px;
+        }
+        div:not(d-z){
+            color:#3c3c3c;
+        }
+        .b-t {
+            display: inline-block;
+            width: 33.3%;
+            height: 70px;
+            line-height: 35px;
+            text-align: center;
+        }
+        .a-1{
+            height:45px;
+            background: #ffffff;
+            padding-left:40px;
+            border-bottom:1px solid #f4f4f4;
+        }
+        .a-3{
+            width:100%;
+            height:138px;
+            margin-top:10px;
+            line-height: 45px;
+        }
+        .wo{
+            background: url(img/xin.png)no-repeat #ffffff;
+            background-position: -24px 14px;
+            background-size: 58px;
+        }
+        .guan{
+            background: url(img/my_xbt.png)no-repeat #ffffff;
+            background-position: -123px -34px;
+            background-size: 242px 385px;
+        }
+        .bang{
+            background: url(img/my_xbt.png)no-repeat #ffffff;
+            background-position: -125px -73px;
+            background-size: 245px 383px;
+        }
+        .a1{
+            display: flex;
+            width:100%;
+            height:45px;
+            background: #ffffff;
+            margin-top:10px;
+            border-bottom:1px solid #f4f4f4;
+        }
+        .tu{
+            width:36px;
+            height:30px;
+        }
+        .tu-1{
+             background: url(img/my_xbt.png)no-repeat;
+             background-position: -176px -132px;
+             background-size: 320px auto;
+         }
+        .tu-2{
+            background: url(img/my_xbt.png)no-repeat;
+            background-position: -88px -132px;
+            background-size: 320px auto;
+        }
+        .tu-3{
+            background: url(img/my_xbt.png)no-repeat;
+            background-position: -176px -177px;
+            background-size: 320px auto;
+        }
+        .tu-4{
+            background: url(img/f_x.png)no-repeat;
+            background-position: 14px 12px;
+            background-size: 18px;
+        }
+        .tu-5{
+            background: url(img/research.png)no-repeat;
+            background-position: 14px 12px;
+            background-size: 18px;
+        }
+        .tu-6{
+            background: url(img/my_xbt.png)no-repeat;
+            background-position: -176px -221px;
+            background-size: 320px auto;
+        }
+        .ke{
+            width:94%;
+            height:45px;
+            line-height: 45px;
+        }
+        .a2{
+            display: flex;
+            width:100%;
+            height:45px;
+            background: #ffffff;
+            border-bottom:1px solid #f4f4f4;
+        }
+        .a3{
+            display: flex;
+            width:100%;
+            height:45px;
+            background: #ffffff;
+            margin-top:10px;
+        }
+        .j{
+            width:35px;
+            height:45px;
+            position: absolute ;
+            right:0;
+            background: url(img/my_xbt.png)no-repeat;
+            background-position: -63px -221px;
+            background-size: 239px 386px;
+        }
+        #footer{
+            display: flex;
+            width:100%;
+            height:50px;
+            border:1px solid #D9D9D9;
+            position: fixed;
+            bottom:0;
+            z-index: 1;
+            background: #ffffff;
+        }
+        a{
+            text-decoration: none;
+        }
+        #footer a{
+            display: inline-block ;
+            width:20%;
+            height:50px;
+            text-align: center ;
+            background-size: 24px 500px;
+            color:#555;
+            font-size:15px;
+        }
+        #footer p{
+            padding-top:28px;
+        }
+        #a1{
+            color: #47B34F;
+            background: url(img/xbt.png) no-repeat ;
+            background-position: center -250px;
+        }
+        #a2{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -300px;
+        }
+        #a3{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -350px;
+        }
+        #a4{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -400px;
+        }
+        #a5{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -200px;
+        }
+    </style>
+</head>
+<body>
+    <a href="deng_lu.html">
+        <div  class="top">
+            <div class="log"></div>
+            <div class="d-z">登录/注册</div>
+        </div>
+    </a>
+        <div class="q-y-b">
+            <div  class="q-b"><a href="deng_lu.html">我的钱包</a></div>
+            <div class="y-h">
+                <p class="s">--</p>
+                <p class="x">优惠券</p>
+            </div>
+            <div class="b-t">
+                <p class="s">--</p>
+                <p class="x">白条</p>
+            </div>
+        </div>
+    <a href="deng_lu.html">
+        <div class="a-3">
+            <div  class="wo a-1">我的关注</div>
+            <div  class="guan a-1">管理地址</div>
+            <div  class="bang a-1">绑定手机号</div>
+        </div>
+    </a>
+
+    <a href="#" class="a1">
+        <div class="tu-1 tu"></div>
+        <div class="ke">客服与反馈</div>
+        <div class="j"></div>
+    </a>
+    <a href="#" class="a2">
+        <div class="tu-2 tu"></div>
+        <div class="ke">下载京东到家</div>
+        <div class="j"></div>
+    </a>
+    <a href="#" class="a2">
+        <div class="tu-3 tu"></div>
+        <div class="ke">大大配送员招募</div>
+        <div class="j"></div>
+    </a>
+    <a href="#" class="a2">
+        <div class="tu-4 tu"></div>
+        <div class="ke">分享有礼</div>
+        <div class="j"></div>
+    </a>
+    <a href="#" class="a2">
+        <div class="tu-5 tu"></div>
+        <div class="ke">用户调研</div>
+        <div class="j"></div>
+    </a>
+    <a href="#" class="a2">
+        <div class="tu-6 tu"></div>
+        <div class="ke">帮助中心</div>
+        <div class="j"></div>
+    </a>
+    <a href="#" class="a3">
+        <div class="tu-6 tu"></div>
+        <div class="ke">关于我们</div>
+        <div class="j"></div>
+    </a>
+    <div id="footer">
+        <a href="jd_dj.html" target="_self" id="a1"><p>首页</p></a>
+        <a href="fen_lei.html" target="_self" id="a2"><p>分类</p></a>
+        <a href="gou_wu_che.html" target="_self" id="a3"><p>购物车</p></a>
+        <a href="ding_dan.html" target="_self" id="a4"><p>订单</p></a>
+        <a href="my.html" target="_self" id="a5"><p>我的</p></a>
+    </div>
+</body>
+</html>

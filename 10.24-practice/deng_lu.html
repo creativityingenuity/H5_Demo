@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东登录</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            background: #F3F5F7;
+            color:#616161;
+        }
+        .top{
+            display: flex ;
+            width:100%;
+            height:45px;
+            background:#F9F9F9 ;
+            border:1px solid #cccccc;
+        }
+        .j-t{
+            width: 20px;
+            height: 20px;
+            background: url(img/de.png)no-repeat ;
+            background-position: 0 -60px;
+            background-size: 21px;
+            margin:auto 10px;
+        }
+        .zi{
+            width:96%;
+            height:45px;
+            text-align: center;
+            line-height: 45px;
+        }
+        .con{
+            width:85%;
+            height:40px;
+            margin:0 auto;
+        }
+        #userName{
+            margin-top:20px;
+        }
+        input{
+            width:100%;
+            height:45px;
+            margin-top:10px;
+            border-radius: 5px;
+            font-size: 15px;
+            padding-left:10px;
+            box-sizing: border-box;
+        }
+        #btn1{
+            margin-top:40px;
+        }
+        .xuan{
+            display: flex ;
+            width:100%;
+            height:30px;
+            line-height: 30px;
+            margin-top:15px;
+        }
+        #xuan{
+            display: inline-block ;
+            width:140px;
+        }
+        .x{
+            display: inline-block ;
+            width:20px;
+            height:20px;
+            background:url(img/de.png)no-repeat ;
+            background-position: 0 -100px;
+            background-size: 21px;
+            margin:auto 2px;
+        }
+        .p1{
+            width:23px;
+            height:23px;
+            position: absolute;
+        }
+        #p1{
+            background:url(img/de.png)no-repeat ;
+            background-position: 0 0;
+            background-size: 22px;
+            right:10%;
+            top:80px;
+            display: none;
+        }
+        #p2 {
+            background: url(img/de.png) no-repeat;
+            background-position: 0 0;
+            background-size: 22px;
+            right: 24%;
+            top: 133px;
+            display: none;
+        }
+        #p3{
+            background:url(img/de.png)no-repeat ;
+            background-position: 0 0;
+            background-size: 22px;
+            right:30%;
+            top:190px;
+            display: none;
+        }
+        #y_z_m{
+            width:70px;
+            height:30px;
+            position: absolute;
+            right: 9%;
+            top: 185px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: bolder;
+            border-left:1px solid #cccccc;
+            color:#EB404D;
+        }
+        .find{
+            display: flex ;
+            width:100%;
+            height:50px;
+        }
+        .find a{
+            text-decoration: none;
+            display: flex ;
+            width:50%;
+            height:50px;
+            line-height: 50px;
+            color:#616161;
+        }
+        .find p{
+            width:20px;
+            height:20px;
+            background:url(img/de.png)no-repeat;
+            margin:auto 2px;
+            background-size: 22px;
+        }
+        .f-mm p{
+            background-position: -1px -24px;
+        }
+        .zhu-ce p{
+            background-position: -1px -43px;
+        }
+        .hr{
+            width:100%;
+            height:50px;
+            padding-top:25px;
+            box-sizing: border-box;
+        }
+        hr{
+            opacity: .2;
+        }
+        .hr p{
+            width:120px;
+            height:20px;
+            position: relative;
+            top:-12px;
+            text-align: center;
+            margin:auto;
+            background:#F3F5F7;
+            font-weight: bolder ;
+        }
+        .qq{
+            width:100%;
+            height:50px;
+        }
+        .q1{
+            display: inline-block ;
+            width:100%;
+            height:27px;
+            background:url(img/de.png)no-repeat;
+            background-position: center -144px;
+            background-size: 25px;
+        }
+        .q2{
+            display: inline-block ;
+            width:100%;
+            height:20px;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        #btn1{
+            background: #EEEEEE;
+        }
+        #div1{
+            width:55px;
+            height:30px;
+            /*border:2px solid #E7E8EB;*/
+            position: absolute;
+            right: 9%;
+            top:128px;
+            border-radius: 50px;
+            color:#ffffff;
+            padding-left:5px;
+            line-height: 30px;
+            box-sizing: border-box;
+        }
+        .open1{
+            background:#F23030 ;
+        }
+        #div2{
+            width:28px;
+            height:28px;
+            border:1px solid #E7E8EB;
+            position: absolute;
+            right: -1%;
+            top: 0;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+        .close1{
+            background: #ffffff;
+            border:1px solid #cccccc;
+        }
+        .close2{
+            left:0;
+            top:0;
+        }
+        #loading{
+            width:100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            background: red;
+            display: none;
+        }
+        .loading{
+            width:100px;
+            height:100px;
+            position: absolute;
+            top: 38%;
+            left: 28%;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <img src="img/loading.gif" class="loading" alt="">
+    </div>
+    <div class="top">
+        <a href="my.html" class="j-t"></a>
+        <p class="zi">京东登录</p>
+    </div>
+    <div class="con">
+        <input type="text" id="userName" placeholder="用户名/邮箱/已验证手机" >
+        <p id="p1" class="p1"></p>
+        <input type="text" id="pwd" placeholder="请输入密码" >
+        <p id="p2" class="p1"></p>
+
+        <div class="open1" id="div1">
+            abc<div class="open2" id="div2"></div>
+        </div>
+
+        <input type="text" id="yzm" placeholder="请输入验证码" >
+        <p id="p3" class="p1"></p>
+        <p id="y_z_m"></p>
+        <input type="button" id="btn1" value="登录">
+        <div class="xuan">
+            <div id="xuan">
+                <div class="x" id="x"></div>一个月内免登陆
+            </div>
+        </div>
+        <div class="find">
+            <a href="#" class="f-mm"><p></p>找回密码</a>
+            <a href="#" class="zhu-ce"><p></p>快速注册</a>
+        </div>
+        <div class="hr">
+            <hr>
+            <p>其他登录方式</p>
+        </div>
+        <div class="qq">
+            <a href="#" class="q1"></a>
+            <a href="#" class="q2">QQ</a>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-3.1.1.js"></script>
+<script>
+    $.ajax({
+        beforeSend:function(){
+            document.getElementById ('loading').style.display='block';
+        },
+        complete:function(){
+            document.getElementById ('loading').style.display='none'
+        }
+    });
+    //验证码
+    var y_z_m=document.getElementById ("y_z_m");
+    var str="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWSYZ";
+    var s='';
+    window.onload=function(){
+        for(var i=0;i<4;i++){
+            s+=str.charAt(Math.random()*str.length);
+            y_z_m.innerHTML=s;
+        }
+    };
+    //密码右侧的按钮
+    var div1=document.getElementById ("div1");
+    var div2=document.getElementById ("div2");
+    div2.onclick=function(){
+        div1.className=(div1.className=='close1')?"open1":"close1";
+        div2.className=(div2.className=='close2')?'open2':'close2';
+    };
+    //input框里的叉号的消失、出现
+    var p1=document.getElementById ("p1");
+    var p2=document.getElementById ("p2");
+    var p3=document.getElementById ("p3");
+    $(':text:eq(0)').on('click',function(){
+        p1.style.display='block';
+    });
+    $(':text:eq(1)').on('click',function(){
+        p2.style.display='block';
+    });
+    $(':text:eq(2)').on('click',function(){
+        p3.style.display='block';
+    });
+    $('#userName').on('blur',function(){
+        p1.style.display='none';
+    });
+    $('#pwd').on('blur',function(){
+        p2.style.display='none';
+    });
+    $('#yzm').on('blur',function(){
+        p3.style.display='none';
+    });
+    //一个月内免登陆的选择
+    var xuan=document.getElementById ("xuan");
+    var x=document.getElementById ("x");
+    xuan.onclick=function(){
+        x.style.backgroundPosition ='0 -110px';
+    }
+</script>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        .top{
+            /*width:100%;*/
+            height:45px;
+            position: fixed;
+            top:0;
+            right:0;
+            left:0;
+            text-align: center;
+            line-height: 50px;
+        }
+        .ss{
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            right: 8px;
+            background: #fff;
+            border-radius: 2px;
+            border: 1px solid #e6e6e6;
+            height: 28px;
+            padding: 0 5px 0 20px;
+        }
+        #ss{
+            width: 96%;
+            height: 25px;
+            vertical-align: top;
+            border: none;
+            box-sizing: border-box;
+            outline: none;
+            line-height: 25px;
+        }
+        .s{
+            width:44px;
+            height:44px;
+            background: url(img/fen-lei.png)no-repeat;
+            background-position: -8px -8px;
+            background-size: 44px auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #cha{
+            width:25px;
+            height:25px;
+            background: url(img/de.png)no-repeat ;
+            background-position: 0 5px;
+            background-size: 20px auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+        }
+        .content{
+            width:100%;
+            height:600px;
+            position: absolute ;
+            top:50px;
+        }
+        .ul{
+            width:90px;
+            height:600px;
+            background: #f8f8f8;
+            position: fixed ;
+            top:50px;
+            left:0;
+            bottom:50px;
+        }
+        .right{
+            width:100%;
+            height:600px;
+            margin-left:90px;
+        }
+        table{
+            width:100%;
+        }
+        td{
+            width:30%;
+        }
+        td img {
+            width: 60px;
+        }
+        tbody:first-child{
+            display: block ;
+        }
+        #footer{
+            display: flex;
+            width:100%;
+            height:50px;
+            border:1px solid #D9D9D9;
+            position: fixed;
+            bottom:0;
+            z-index: 1;
+            background: #ffffff;
+        }
+        a{
+            text-decoration: none;
+        }
+        #footer a{
+            display: inline-block ;
+            width:20%;
+            height:50px;
+            text-align: center ;
+            background-size: 24px 500px;
+            color:#555;
+            font-size:15px;
+        }
+        #footer p{
+            padding-top:28px;
+        }
+        #a1{
+            color: #47B34F;
+            background: url(img/xbt.png) no-repeat ;
+            background-position: center -250px;
+        }
+        #a2{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -50px;
+        }
+        #a3{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -350px;
+        }
+        #a4{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -400px;
+        }
+        #a5{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -450px;
+        }
+        #loading{
+            width:100%;
+            height:100%;
+            position: absolute;
+            top:0;
+            left:0;
+            display: none;
+        }
+        .loading{
+            width:100px;
+            height:100px;
+            position: absolute;
+            top: 38%;
+            left: 28%;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <img src="img/loading.gif" class="loading" alt="">
+    </div>
+    <div class="top">
+        <div class="ss">
+            <i class="s"></i>
+            <input type="search" id="ss" placeholder="搜索附近商品和店名" >
+            <i id="cha" ></i>
+        </div>
+        <div class="content">
+            <div class="ul">
+                <ul class="nav nav-tabs" role="tablist" id="nav-tab">
+
+                </ul>
+            </div>
+            <div class="right">
+                    <table class="table table-responsive table-hover">
+                        <caption>水果</caption>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+     </div>
+    <div id="footer">
+        <a href="jd_dj.html" target="_self" id="a1"><p>首页</p></a>
+        <a href="fen_lei.html" target="_self" id="a2"><p>分类</p></a>
+        <a href="gou_wu_che.html" target="_self" id="a3"><p>购物车</p></a>
+        <a href="ding_dan.html" target="_self" id="a4"><p>订单</p></a>
+        <a href="my.html" target="_self" id="a5"><p>我的</p></a>
+    </div>
+</body>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script>
+    var cha=document.getElementById ("cha");
+    $('#ss').on('focus',function(){
+        cha.style.display='block';
+    });
+    $('input:eq(0)').on('blur',function(){
+      cha.style.display='none';
+    });
+    $.ajax({
+        url:'service/list_tab.php',
+        dataType:'json',
+        success:function(result){
+            fillHtml({
+                htmlModel:'tab_part.html',
+                element:'nav-tab',
+                resultData:result
+            })
+        }
+    });
+    document.getElementById ('nav-tab').onclick=function(e){
+
+//        if(e.target.nodeName.toLowerCase()=='a'){
+            var a= e.target;
+            var oLi= a.parentNode;
+            var index=oLi.dataset.index;
+
+            $.ajax({
+                url:'service/list_content.php',
+                data:{
+                    did:index
+                },
+
+                dataType:'json',
+                success:function(r){
+                    fillHtml({
+                        htmlModel:'table_part.html',
+                        element:'tbody',
+                        resultData:r
+                    })
+                }
+            });
+//        }
+    };
+    function fillHtml(obj){
+        var htmlModelUrl=obj.htmlModel;
+        var elementTarget=obj.element;
+        var result=obj.resultData;
+//        var fn=new Function();
+//        var callBack=obj.callBack||fn;
+        $.ajax({
+            url:htmlModelUrl,
+            success:function(data){
+                var regStart=/\{\{i\./g;
+                var regEnd=/\}\}/g;
+                var key,ks=[];
+                while(regStart.test(data)){
+                    regEnd.test(data);
+                    key=data.substring(regStart.lastIndex,regEnd.lastIndex-2);
+                    ks.push(key);
+                }
+                var htmlModel=data,sumResult='';
+                result.forEach(function(obj){
+                    ks.forEach(function(k){
+                        data=data.replace('{{i.'+k+'}}',obj[k]);
+                    });
+                    sumResult+=data;
+                    data=htmlModel;
+                });
+                document.getElementById (elementTarget).innerHTML=sumResult;
+                console.log(sumResult);
+//                callBack();
+            },
+            beforeSend: function () {
+                //alert('bfs');
+                //new Image();
+                document.getElementById('loading').style.display = 'block';
+            },
+            //请求完成时
+            complete: function () {
+                document.getElementById('loading').style.display = 'none';
+            }
+
+        })
+    }
+</script>
+</html>

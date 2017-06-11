@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+
+        img{
+            width:60px;
+            height:60px;
+            display: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img id="div1" src="../img/tudou.jpg" alt="">
+<img id="div2" src="../img/gonggua.jpg" alt="">
+<img id="div3" src="../img/dan.jpg" alt="">
+</body>
+<script src="../../js/jquery-3.1.1.js"></script>
+<script>
+
+   setInterval(function(){
+       $(document).ready(function(){
+           $("#div1").fadeIn(1000);
+           $("#div2").fadeIn(9000);
+           $("#div3").fadeIn(20000);
+       })
+   },1000);
+
+
+</script>
+</html>

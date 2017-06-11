@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东到家</title>
+    <link rel="stylesheet" href="../Swiper-3.3.1/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/deng_lu.css">
+    <link rel="stylesheet" href="css/ding_dan.css">
+    <link rel="stylesheet" href="css/fen_lei.css">
+    <link rel="stylesheet" href="css/gou_wu.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/shou_ye.css">
+    <style>
+        section{
+            display: none;
+        }
+        .current{
+            display: block ;
+        }
+    </style>
+</head>
+<body ng-app="myRoute">
+    <!--<div huijia>-->
+
+    <!--</div>-->
+
+
+    <div id="footer">
+        <a ui-sref="jd_dj" target="_blank" id="a1" data-href="shou_ye"><p>首页</p></a>
+        <a ui-sref="fen_lei" target="_self" id="a2" data-href="fen_lei"><p>分类</p></a>
+        <a ui-sref="gou_wu_che" target="_self" id="a3" data-href="gou_wu" ><p>购物车</p></a>
+        <a ui-sref="ding_dan" target="_self" id="a4"  data-href="ding_dan"><p>订单</p></a>
+        <a ui-sref="my" target="_self" id="a5" data-href="my"><p>我的</p></a>
+    </div>
+</body>
+<script src="../Swiper-3.3.1/dist/js/swiper.js"></script>
+<script src="../js/jquery-3.1.1.js"></script>
+<script src="../js/angular-ui-router.js"></script>
+<script src="../js/angular-1.5.8.min.js"></script>
+<script src="javaS/shou_ye.js"></script>
+<script src="javaS/deng_lu.js"></script>
+<script src="javaS/fen_lei.js"></script>
+<!--<script>-->
+    <!--onpopstate=function(){-->
+        <!--var key=location.href.split("#")[1];-->
+        <!--$('section.current').removeClass('current');-->
+        <!--$('section').eq(router[key]).addClass('current');-->
+    <!--};-->
+    <!--var router={-->
+        <!--index:0-->
+    <!--};-->
+    <!--if(!location.href.split("#")[1]){-->
+        <!--history.replaceState(null,'index',location.href+'#index');-->
+    <!--}-->
+    <!--$.ajax({-->
+        <!--url:'model/shou_ye.html',-->
+        <!--success:function(d){-->
+            <!--$('<section>',{class:'current'}).html(d).appendTo('[huijia]');-->
+        <!--}-->
+    <!--});-->
+    <!--$(function(){-->
+        <!--$.fn.getNodeName=function(){-->
+            <!--return this[0].nodeName.toLowerCase ();-->
+        <!--} ;-->
+        <!--$('.footer').on('click','a',function(e){-->
+            <!--var oA;-->
+            <!--var el=$(e.target);-->
+            <!--if(e.target.nodeName.toLowerCase()=='a'){-->
+                <!--oA=$(e.target);-->
+            <!--}else if(el.parent().getNodeName.toLowerCase ()=='a'){-->
+                <!--oA=el.parent();-->
+            <!--}-->
+            <!--history.pushState(null,oA[0].dataset.href,'#'+oA[0].dataset.href);-->
+            <!--if(router[oA[0].dataset.href]==undefined){-->
+                <!--router[oA[0].dataset.href]=Object.keys(router).length;-->
+                <!--var modelUrl='model/'+oA[0].dataset.href+'html';-->
+                <!--$.ajax({-->
+                    <!--url:modelUrl,-->
+                    <!--success:function(d){-->
+                        <!--$('section.current').removeClass('current');-->
+                        <!--$('<section>',{class:'current'}).html(d).appendTo('[huijia]');-->
+                    <!--}-->
+                <!--})-->
+            <!--}else{-->
+                <!--$('section.current').removeClass('current');-->
+                <!--$('section').eq(router[oA[0].dataset.href]).addClass('current');-->
+            <!--}-->
+        <!--})-->
+    <!--})-->
+<!--&lt;!&ndash;</script>-->
+</html>

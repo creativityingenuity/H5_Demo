@@ -1,0 +1,24 @@
+<tr>
+    <td>{{i.r1}}</td>
+    <td>{{i.r2}}</td>
+    <td>{{i.r3}}</td>
+</tr>
+<!--
+需要变化:
+    html模板
+    后端数据
+        url
+    需要展示的位置
+        html中的 ID值
+
+        ajax异步请求
+        如果遇到 '异步' , 就在函数的参数中留一个回调函数作为参数
+        回调函数在填充好html后, 执行
+
+    目标:
+        fillHtml({
+            template: 'view/xxx.html',
+            elementId: 'tbody',
+            callBack: function(){}
+        })
+-->

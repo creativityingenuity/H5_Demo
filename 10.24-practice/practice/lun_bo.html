@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="x_l_b">
+        <img src="../img/tudou.jpg" alt="">
+        <img src="../img/dan.jpg" alt="">
+        <img src="../img/gonggua.jpg" alt="">
+    </div>
+</body>
+<script src="../../js/jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        var oImg=$('#x_l_b').find('img');
+        var count=0;
+        function Tab(){
+            if(count==3){
+                count=0;
+            }
+                oImg.hide();
+                oImg.eq(count).show();
+                count++;
+        }
+        setInterval(Tab,1000);
+    })
+</script>
+</html>

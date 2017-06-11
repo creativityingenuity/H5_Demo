@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+
+        img{
+            width:60px;
+            height:60px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="xiaolunbo">
+    <img id="div1" src="../img/tudou.jpg" alt="">
+    <img id="div2" src="../img/gonggua.jpg" alt="">
+    <img id="div3" src="../img/dan.jpg" alt="">
+</div>
+
+</body>
+<script src="../../js/jquery-3.1.1.js"></script>
+<script>
+
+ $(function () {
+        var oImg = $('#xiaolunbo').find('img');
+        var count = 0;
+
+        function tab() {
+            if (count == 3) {
+                count = 0;
+            }
+            oImg.hide();
+            oImg.eq(count).show();
+            count++;
+        }
+
+        setInterval(tab, 2000);
+    })
+
+
+</script>
+</html>

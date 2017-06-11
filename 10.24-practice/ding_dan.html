@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .log{
+            width:100%;
+            height:280px;
+            background: url(img/dl-log.png)no-repeat;
+            background-size: 100px;
+            background-position: center 170px;
+        }
+        .zi{
+            width:100%;
+            height:50px;
+            text-align: center;
+        }
+        #btn{
+            width:80px;
+            height:35px;
+            background: #47B34F;
+            border:1px solid #47B34F;
+            border-radius: 5px;
+            color:#ffffff;
+            margin-left:40%;
+            font-size: 18px;
+        }
+        #footer{
+            display: flex;
+            width:100%;
+            height:50px;
+            border:1px solid #D9D9D9;
+            position: fixed;
+            bottom:0;
+            z-index: 1;
+            background: #ffffff;
+        }
+        a{
+            text-decoration: none;
+        }
+        #footer a{
+            display: inline-block ;
+            width:20%;
+            height:50px;
+            text-align: center ;
+            background-size: 24px 500px;
+            color:#555;
+            font-size:15px;
+        }
+        #footer p{
+            padding-top:28px;
+        }
+        #a1{
+            color: #47B34F;
+            background: url(img/xbt.png) no-repeat ;
+            background-position: center -250px;
+        }
+        #a2{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -300px;
+        }
+        #a3{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -350px;
+        }
+        #a4{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -152px;
+        }
+        #a5{
+            background: url(img/xbt.png) no-repeat;
+            background-position: center -450px;
+        }
+    </style>
+</head>
+<body>
+    <div class="log"></div>
+    <div class="zi">登陆后才能查看订单哦</div>
+    <a href="deng_lu.html"><button id="btn">立即登录</button></a>
+    <div id="footer">
+        <a href="jd_dj.html" target="_self" id="a1"><p>首页</p></a>
+        <a href="fen_lei.html" target="_self" id="a2"><p>分类</p></a>
+        <a href="gou_wu_che.html" target="_self" id="a3"><p>购物车</p></a>
+        <a href="ding_dan.html" target="_self" id="a4"><p>订单</p></a>
+        <a href="my.html" target="_self" id="a5"><p>我的</p></a>
+    </div>
+</body>
+</html>

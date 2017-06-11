@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部</title>
+    <style>
+        body{
+            height:2000px;
+        }
+        #ding{
+            width:36px;
+            height:36px;
+            background:url(../img/my_xbt.png) no-repeat #000000;
+            background-position: -268px -355px;
+            background-size: 320px auto;
+            opacity: .8;
+            border: 1px solid #757575;
+            border-top: 1px solid #4b4b4b;
+            border-radius: 0 0 0 4px;
+            position: fixed ;
+            bottom: 140px;
+            right:0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="ding"></div>
+    <input type="search">
+</body>
+<script>
+    var ding=document.getElementById ("ding");
+    window.onscroll=function(){
+        var top=document.documentElement.scrollTop||document.body.scrollTop;
+        if(top>=600){
+            ding.style.display ='block';
+        }else{
+            ding.style.display ='none';
+        }
+    };
+    function callBack(){
+        var top=document.documentElement.scrollTop||document.body.scrollTop;
+        if(top>0){
+            document.documentElement.scrollTop-=50;
+            document.body.scrollTop-=50;
+        }else{
+            document.documentElement.scrollTop=0;
+            document.body.scrollTop=0;
+            clearInterval(timer);
+        }
+    }
+    ding.onclick=function(){
+        var timer=setInterval(callBack,10);
+    }
+</script>
+</html>
